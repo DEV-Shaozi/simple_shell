@@ -5,19 +5,21 @@ int main(void)
 {
 	char *input = NULL;
 	size_t lenght = 0;
-	size_t numberRead;
+	ssize_t numberRead;
+
 	while (1)
 	{
 		printf("$ ");
 		numberRead = getline(&input, &lenght, stdin);
-		if (numberRead == -2)
+		if (numberRead == -1)
 		{
-			printf("error");
+			printf("The program is closed\n");
 			free(input);
-			return (-2);
+			return (-1);
 		}
 		printf("My input is %s", input);
 	}
+	printf("The program is closing"); 
 	free(input);
 	return (0);
 }
