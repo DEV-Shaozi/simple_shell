@@ -19,7 +19,7 @@ int main(void)
 		}
 		printf("My input is %s", input);
 	}
-	printf("The program is closing"); 
+	printf("The program is closing");
 	free(input);
 	return (0);
 }
